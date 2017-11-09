@@ -14,3 +14,12 @@ $(document).ajaxStop(function() {
         NProgress.done();
     }, 500);
 });
+
+
+$(".child").prev().on("click", function() {
+    $(this).next().slideToggle();
+});
+$('.topbar .btn_menu').on('click', function() {
+    $('.ad_aside').toggleClass('now');
+    $('.main').toggleClass('now');
+})
