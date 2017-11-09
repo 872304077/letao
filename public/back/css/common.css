@@ -132,3 +132,9 @@ a:active {
     font-size: 18px;
     color: #fff;
 }
+
+.in_left,
+.in_right {
+    width: 45%;
+    height: 400px;
+}
