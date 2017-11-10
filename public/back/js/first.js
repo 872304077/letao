@@ -69,9 +69,9 @@ $(function() {
                     $('#addModal').modal('hide');
                     currentPage = 1;
                     render();
-
-                    $form.data('bootstrapValidator').resetFrom();
-                    $from[0].reset();
+                    // 清除表单的内容
+                    $form.data('bootstrapValidator').resetForm();
+                    $form[0].reset();
                 }
             }
         });
