@@ -62,8 +62,13 @@
                 <li><a href="#">管理系统</a></li>
                 <li class="active">一级分类</li>
             </ol>
+
+            <!-- 添加分类 -->
+            <div class="append" style="padding-bottom:20px;">
+                <button id="addBtn" class="btn btn-default mb_15">添加分类</button>
+            </div>
             <!-- 一级分类表单 -->
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <td width="20%">序号</td>
@@ -72,14 +77,34 @@
                 </thead>
                 <tbody>
                     <!--挖个坑-->
-                    <tr>
-                        <td></td>
-                    </tr>
+
                 </tbody>
             </table>
 
             <div class="text-right">
                 <ul id="paginator"></ul>
+            </div>
+        </div>
+        <!-- 添加分类模态框 -->
+        <div class="modal fade" tabindex="-1" id="addModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" form="form" class="btn btn-primary btn_confirm">确定</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -111,9 +136,20 @@
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
     <script src="lib/echarts/echarts.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+        <tr>
+            <td>{{(page-1)*size+i+1}}</td>
+            <td>{{v.categoryName}}</td>
+        </tr>
+        {{/each}}
+    </script>
     <script src="./js/comment.js"></script>
+    <script src="./js/first.js"></script>
 </body>
 
 </html>
