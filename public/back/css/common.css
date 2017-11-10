@@ -138,3 +138,7 @@ a:active {
     width: 45%;
     height: 400px;
 }
+
+.table-bordered {
+    text-align: center;
+}
