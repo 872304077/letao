@@ -1,144 +1,180 @@
 @charset "UTF-8";
-html,
-body {
-    height: 100%;
+html,body {
+  height: 100%;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
-    text-decoration: none;
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
 }
 
 .login_bg {
-    background-color: #222d32;
+  background-color: #222d32;
 }
 
 .mt_150 {
-    margin-top: 150px;
+  margin-top: 150px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
 }
 
 .panel h4 {
-    text-align: center;
+  text-align: center;
 }
 
 
-/* ***********右边导航栏部分**************** */
-
-.ad_aside {
-    width: 180px;
-    height: 100%;
-    background-color: #222d32;
-    position: absolute;
-    left: 0;
-    transition: all 1s;
+/*首页*/
+.lt_aside {
+  width: 180px;
+  height: 100%;
+  background-color: #222d32;
+  position: fixed;
+  left: 0;
+  transition: all 1s;
+  z-index: 999;
 }
 
-.ad_aside.now {
-    left: -180px;
+.lt_aside.now {
+  left: -180px;
 }
 
-.brand a {
-    background-color: #367fa9;
-    display: block;
-    line-height: 50px;
-    font-size: 24px;
-    text-align: center;
-    color: #fff;
-    /* font-weight: 700; */
+.lt_aside .brand a {
+  display: block;
+  width: 180px;
+  height: 50px;
+  background-color: #367fa9;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
 }
 
-.user {
-    width: 180px;
-    height: 150px;
-    text-align: center;
+.lt_aside .user {
+  width: 180px;
+  height: 150px;
 }
 
-.user img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    border-radius: 50%;
-    margin: 30px auto 0;
+.lt_aside .user img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 30px auto 0;
+  border-radius: 50%;
 }
 
-.user span {
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 20px;
-    color: #fff;
-}
-
-.nav {
-    width: 100%;
-}
-
-.nav a {
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    color: #bbb;
-    padding-left: 30px;
-    font-size: 16px;
-    border: 3px solid transparent;
-}
-
-.nav .child a {
-    padding-left: 50px;
-    font-size: 14px;
-}
-
-.nav li a.now {
-    background-color: #1D1F21;
-    color: #fff;
-    border: 3px solid transparent;
-    border-left-color: #367fa9;
+.lt_aside .user p {
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
 }
 
 
-/* ************右边样式部分*********** */
-
-.main {
-    height: 100%;
-    padding-left: 180px;
-    transition: all 1s;
+.lt_aside .nav a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  color: #ddd;
+  padding-left: 30px;
+  border: 3px solid transparent;
 }
 
-.main.now {
-    padding-left: 0;
+
+.lt_aside .nav a.now {
+  border-left-color: #069;
+  background-color: #1d1f21;
+  color: #fff;
 }
 
-.main .topbar {
-    height: 50px;
-    background-color: #3c8dbc;
-    padding: 0 20px;
-    line-height: 50px;
-    margin-bottom: 20px;
+.lt_aside .nav .child a {
+  padding-left: 50px;
 }
 
-.main .topbar a {
-    font-size: 18px;
-    color: #fff;
+.lt_main {
+  height: 100%;
+  padding-left: 180px;
+  transition: all 1s;
+  padding-top: 70px;
 }
 
-.in_left,
-.in_right {
-    width: 45%;
-    height: 400px;
+.lt_main.now{
+  padding-left: 0;
 }
 
-.table-bordered {
-    text-align: center;
+.lt_main .topbar {
+  height: 50px;
+  background-color: #3c8dbc;
+  padding: 0 20px 0 200px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  transition: all 1s;
+}
+
+.lt_main .topbar.now {
+  padding-left: 20px;
+}
+
+.lt_main .topbar a{
+  color: #fff;
+  font-size: 16px;
+}
+
+
+.pic_left,
+.pic_right {
+  width: 45%;
+  height: 400px;
+}
+
+
+/*上传图片的样式*/
+.upload_box {
+  width: 82px;
+  height: 34px;
+  position: relative;
+}
+
+.upload_box:hover button {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.upload_box input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+
+.img_wrap {
+  border: 1px solid #000;
+  padding: 2px;
+  display: inline-block;
 }
