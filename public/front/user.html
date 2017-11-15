@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>乐淘商城-搜索中心</title>
+    <title>乐淘商城-个人中心</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/user.css">
 
 </head>
 
@@ -20,34 +20,37 @@
     <div class="lt_container">
         <div class="lt_header">
 
-            <a href="index.html" class="icon_left"><span class="mui-icon mui-icon-arrowleft"></span></a>
-            <h4>搜索中心</h4>
-            <a href="search.html" class="icon_right"><span class="fa fa-search"></span></a>
+            <a href="Javascript:history.go(-1);" class="icon_left"><span class="mui-icon mui-icon-back"></span></a>
+            <h4>个人中心</h4>
         </div>
 
         <div class="lt_content">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media mui_login">
+                    <!-- 挖的账号的坑 -->
+                </li>
 
-            <!--mui-scroll-wrapper-->
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <!-- 搜索框 -->
-                    <div class="lt_search">
-                        <input type="text" placeholder="请输入你要查询的商品">
-                        <button class="mui-btn-blue">搜索</button>
-                    </div>
-                    <!--这里放置真实显示的DOM内容-->
-                    <!-- 搜索内容的框框 -->
-                    <div class="lt_history">
-                        <!-- 有一个大坑,数据模板 -->
-                    </div>
-                </div>
+                <li class="mui-table-view-cell mui-media">
+                    <a class="mui-navigate-right">账号与安全</a>
+                </li>
+                <li class="mui-table-view-cell mui-media">
+                    <a href="cart.html" class="mui-navigate-right">我的购物车</a>
+                </li>
+                <li class="mui-table-view-cell mui-media">
+                    <a class="mui-navigate-right">收获地址管理</a>
+                </li>
+            </ul>
+
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn  btn_logout">退出</button>
             </div>
         </div>
 
 
+
         <div class="lt_footer">
             <ul class="mui-clearfix">
-                <li class="now">
+                <li>
                     <a href="index.html">
                         <span class="fa fa-home"></span>
                         <p>首页</p>
@@ -65,7 +68,7 @@
                         <p>购物车</p>
                     </a>
                 </li>
-                <li>
+                <li class="now">
                     <a href="user.html">
                         <span class="fa fa-user"></span>
                         <p>会员中心</p>
@@ -77,28 +80,20 @@
 
 
     <script type="text/html" id="tpl">
-        {{if arr.length === 0}}
-        <p>没有搜索历史记录</p>
-        {{/if}} {{if arr.length > 0}}
-        <div class="title mui-clearfix">
-            <span class="mui-pull-left">搜索历史</span>
-            <span class="mui-pull-right mui-pull-right fa fa-trash btn_empty">清空记录</span>
-        </div>
-        <ul class="content">
-            {{each arr v i}}
-            <li class="mui-clearfix">
-                <a class="mui-pull-left" href="searchList.html?key={{v}}">{{v}}</a>
-                <span data-index="{{i}}" class="mui-pull-right mui-icon mui-icon-closeempty btn_delete"></span>
-            </li>
-            {{/each}}
-        </ul>
-        {{/if}}
+
+        <a href="javascript:;" class="mui-navigate-right">
+            <img class="mui-media-object mui-pull-left" src="images/user.jpg">
+            <div class="mui-media-body">
+                {{username}}
+                <p class="mui-ellipsis">手机:{{mobile}}</p>
+            </div>
+        </a>
     </script>
     <script src="lib/mui/js/mui.js"></script>
     <script src="./lib/zepto/zepto.min.js"></script>
     <script src="./lib/artTemplate/template-web.js"></script>
     <script src="js/common.js"></script>
-    <script src="./js/search.js"></script>
+    <script src="./js/user.js"></script>
 
 </body>
 
